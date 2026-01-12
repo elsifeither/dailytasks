@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <nav class="main-nav">
+
+            <ul>
+                <li><a href="/">DailyTasks</a></li>
+            </ul>
+
+
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            
+
+            <div class="auth-buttons">
+                <a href="/users/login" class="btn-link">Login</a>
+                <a href="/users/register" class="btn-link">Register</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="card">
+        <h2>LOGIN</h2>
+
+        <form>
+            <label for="email">Email</label>
+            <input type="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" required>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <p class="auth-link">
+           Not registered yet?
+            <a href="/users/register">Register</a>
+        </p>
+    </div>
+</main>
+
+<footer>
+    © 2025 DailyTasks
+</footer>
+
+</body>
+</html>

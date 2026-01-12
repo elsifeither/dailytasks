@@ -1,0 +1,74 @@
+.tasks-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* TOOLBAR */
+.tasks-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tasks-toolbar h2 {
+    text-align: center;
+}
+
+/* CARDS */
+.task-card {
+    background-color: white;
+    padding: 1.4rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-date {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.task-desc {
+    margin: 0.8rem 0;
+}
+
+/* ACTIONS */
+.task-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FORM */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.task-form input {
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+
+/* UTIL */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,75 @@
+/* Contact Page Styles */
+
+/* Main contact section */
+.contact-hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Headings and description */
+.contact-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Form layout */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Inputs and textarea */
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #252629;
+}
+
+/* Submit button */
+.contact-form button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #C0392B;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #790f03;
+}
+
+/* Optional: responsive adjustments */
+@media (max-width: 500px) {
+    .contact-hero {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        font-size: 0.95rem;
+    }
+}

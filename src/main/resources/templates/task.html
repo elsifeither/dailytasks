@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/task.css">
+    <script src="/js/tasks.js"></script>
+</head>
+
+<body class="page-tasks">
+
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+
+                <ul>
+                    <li><a href="/">DailyTasks</a></li>
+                </ul>
+
+
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+
+
+                <div class="auth-buttons">
+                    <a href="/users/login" class="btn-link">Login</a>
+                    <a href="/users/register" class="btn-link">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="tasks-container">
+
+            <div class="tasks-toolbar">
+                <h2>Your Tasks</h2>
+                <button class="btn btn-add" onclick="toggleAddTask()">+ Add</button>
+            </div>
+
+            <div id="addTaskForm" class="task-card hidden">
+                <h3>Add New Task</h3>
+
+                <form class="task-form">
+                    <input type="text" placeholder="Title" required>
+                    <input type="text" placeholder="Description" required>
+                    <input type="date" required>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" onclick="toggleAddTask()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="task-card">
+                <div class="task-header">
+                    <h3>Finish Spring project</h3>
+                    <span class="task-date">2025-01-10</span>
+                </div>
+
+                <p class="task-desc">
+                    Complete entities, controllers and UI.
+                </p>
+
+                <div class="task-actions">
+                    <label>
+                        <input type="checkbox">
+                        Completed
+                    </label>
+
+                    <div class="task-buttons">
+                        <button class="btn btn-small">Edit</button>
+                        <button class="btn btn-danger btn-small">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2025 DailyTasks
+    </footer>
+
+
+
+    <script>
+        function toggleAddTask() {
+            document.getElementById("addTaskForm").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+
+</html>

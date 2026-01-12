@@ -1,0 +1,53 @@
+/* About Page Styles */
+
+/* Main section */
+.about-hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Features section */
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+    margin-bottom: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .about-hero {
+        padding: 2rem 1rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+}

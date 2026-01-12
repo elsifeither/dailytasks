@@ -1,0 +1,9 @@
+--INSERT INTO users (id, email, password, role) VALUES
+--(1, 'user1@example.com', 'password1', 'USER'),
+--(2, 'user2@example.com', 'password2', 'USER');
+--
+--INSERT INTO tasks (id, title, description, due_date, completed, user_entity_id) VALUES
+--(1, 'Finish project', 'Complete the DailyTasks project', '2025-12-31', false, 1),
+--(2, 'Read book', 'Read Spring Boot documentation', '2025-12-25', false, 1),
+--(3, 'Go jogging', 'Run 5km', '2025-12-21', false, 2),
+--(4, 'Buy groceries', 'Milk, Eggs, Bread', '2025-12-22', false, 2);

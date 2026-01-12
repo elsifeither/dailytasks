@@ -1,0 +1,28 @@
+header {
+    background-color: #252629;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0.5rem 0.2rem;
+    min-height: 4rem;
+}
+
+
+main {
+    background-color: #F5F2F2;
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #252629;
+    color: white;
+    min-height: 7rem;
+    font-size: 1.1rem;
+}

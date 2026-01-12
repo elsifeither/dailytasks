@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+
+
+<header>
+    <div class="container">
+        <nav class="main-nav">
+
+            <ul>
+                <li><a href="/">DailyTasks</a></li>
+            </ul>
+
+
+            <ul>
+            
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            
+
+            <div class="auth-buttons">
+                <a href="/users/login" class="btn-link">Login</a>
+                <a href="/users/register" class="btn-link">Register</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+    <div class="card">
+        <h2>CREATE ACCOUNT</h2>
+
+
+        <div th:if="${errorMessage}" class="alert alert-danger">
+            <span th:text="${errorMessage}"></span>
+        </div>
+        <div th:if="${successMessage}" class="alert alert-success">
+            <span th:text="${successMessage}"></span>
+        </div>
+
+        <form th:action="@{/users/register}"
+              th:object="${registerDTO}"
+              th:method="POST">
+
+            <label>First name</label>
+            <input
+                    th:field="*{firstName}"
+                    type="text"
+                    th:errorclass="'is-invalid alert-danger'"
+                    required minlength="5" maxlength="20"
+            >
+
+            <label>Last name</label>
+            <input
+                    th:field="*{lastName}"
+                    type="text"
+            >
+
+            <label>Email</label>
+            <input
+                    th:field="*{email}"
+                    type="email"
+            >
+
+            <label>Password</label>
+            <input
+                    th:field="*{password}"
+                    type="password"
+            >
+
+            <label>Confirm password</label>
+            <input
+                    th:field="*{confirmPassword}"
+                    type="password"
+            >
+
+        
+            <div class="terms">
+                <input type="checkbox">
+                <label>
+                    <a href="/">I accept the Terms and Conditions and the Privacy Policy</a>
+                 </label>
+            </div>
+
+            <button class="btn btn-primary">Register</button>
+        
+        </form>
+
+        <p class="auth-link">
+            Already have an account?
+            <a href="/users/login">Login</a>
+        </p>
+    </div>
+</main>
+
+<footer>
+    © 2025 DailyTasks
+</footer>
+</body>
+</html>
