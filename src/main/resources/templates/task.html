@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,6 @@
     <title>Task</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/task.css">
-    <script src="/js/tasks.js"></script>
 </head>
 
 <body class="page-tasks">
@@ -20,7 +19,7 @@
 
             <div class="tasks-toolbar">
                 <h2>Your Tasks</h2>
-                <button class="btn btn-add" onclick="toggleAddTask()">+ Add</button>
+                <button class="btn btn-add" id="addTaskBtn" >+ Add</button>
             </div>
 
             <div id="addTaskForm" class="task-card hidden">
@@ -33,7 +32,7 @@
 
                     <div class="form-buttons">
                         <button type="submit" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-secondary" onclick="toggleAddTask()">Cancel</button>
+                        <button type="button" class="btn btn-secondary" id="cancelAddTaskBtn">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -68,11 +67,8 @@
 
 
 
-    <script>
-        function toggleAddTask() {
-            document.getElementById("addTaskForm").classList.toggle("hidden");
-        }
-    </script>
+<script src="/js/tasks.js"></script>
+
 
 </body>
 

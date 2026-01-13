@@ -19,10 +19,10 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .loginPage("/users/login")      // GET page
-                        .loginProcessingUrl("/users/login")   // POST handled by Spring Security
+                        .loginPage("/users/login")
+                        .loginProcessingUrl("/users/login")
                         .defaultSuccessUrl("/", true)
-                        .failureUrl("/")
+                        .failureUrl("/users/login?error")
                         .permitAll()
                 )
                 .logout(logout -> logout

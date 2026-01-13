@@ -1,11 +1,9 @@
 package com.example.dailytasks.model.web;
 
 import com.example.dailytasks.model.dto.UserRegisterDTO;
-import com.example.dailytasks.model.entity.UserEntity;
 import com.example.dailytasks.model.service.UserEntityService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -45,7 +43,7 @@ public class RegistrationController {
             redirectAttributes.addFlashAttribute("registerDTO", registerDTO);
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.registerDTO", bindingResult);
-            redirectAttributes.addFlashAttribute("errorMessage", "The password confirmation does not match!");
+            redirectAttributes.addFlashAttribute("errorMessage", "Information does not match!");
 
 
             return "redirect:/users/register";
@@ -54,7 +52,7 @@ public class RegistrationController {
         boolean success = userEntityService.registerUser(registerDTO);
 
         if (!success) {
-            redirectAttributes.addFlashAttribute("errorMessage", "Email or username already exists!");
+            redirectAttributes.addFlashAttribute("errorMessage", "Email already used!");
             return "redirect:/users/register";
         }
         redirectAttributes.addFlashAttribute("successMessage", "Registration was successful! Please log in.");

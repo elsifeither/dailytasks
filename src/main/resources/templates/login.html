@@ -15,6 +15,10 @@
 <main>
     <div class="card">
 
+        <div th:if="${param.error}" class="alert alert-danger">
+            Invalid email or password.
+        </div>
+
         <div th:if="${successMessage}" class="alert alert-success">
             <span th:text="${successMessage}"></span>
         </div>
@@ -26,6 +30,7 @@
         >
             <label for="email">Email</label>
             <input
+                    id="email"
                     type="email"
                     name="username"
                     required minlength="5" maxlength="20"
@@ -33,6 +38,7 @@
 
             <label for="password">Password</label>
             <input
+                    id="password"
                     type="password"
                     name="password"
                     required minlength="5" maxlength="20"

@@ -14,14 +14,20 @@
 
 
 /* Buttons */
+
+
+
 .btn {
-    padding: 0.7rem 1.4rem;
+    all: unset;
+    padding: 1.4rem 1.4rem;
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
     margin-top: 2rem;
     font-size: 1.2rem;
     color: #252629;
+    text-align: center;
+
 }
 
 .btn-primary {
@@ -70,6 +76,16 @@ nav .auth-buttons {
     font-size: 0.85rem;
     padding: 0.4rem 0.7rem;
 }
+
+.btn-logout {
+    all: unset;
+    padding: 0.7rem 0.7rem;
+    border-radius: 1000px;
+    transition: all 0.2s;
+    background-color: #c0392b;
+    color: white;
+}
+
 
 
 

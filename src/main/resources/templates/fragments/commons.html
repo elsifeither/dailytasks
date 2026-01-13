@@ -1,4 +1,4 @@
-<header th:fragment="nav" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<header th:fragment="nav" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
     <div class="container">
         <nav class="main-nav">
 
@@ -24,7 +24,7 @@
                         th:action="@{/users/logout}"
                         th:method="POST"
                 >
-                    <button type="submit" class="btn-link">Logout</button>
+                    <button type="submit" class="btn-logout btn-primary">Logout</button>
                 </form>
             </div>
         </nav>

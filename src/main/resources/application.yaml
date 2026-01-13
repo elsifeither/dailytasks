@@ -14,9 +14,9 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: create
-#  sql:
-#    init:
-#      mode: always
+  sql:
+    init:
+      mode: always
   mvc:
     hiddenmethod:
       filter:

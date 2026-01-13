@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
 
             <div class="hero-buttons">
                 <a href="/task" class="btn btn-primary">Get Started</a>
-                <a href="/users/login" class="btn btn-secondary">Login</a>
+                <a href="/users/login" class="btn btn-secondary" sec:authorize="isAnonymous()">Login</a>
             </div>
         </section>
 
