@@ -9,40 +9,34 @@
 </head>
 
 <body>
-<header>
-    <div class="container">
-        <nav class="main-nav">
 
-            <ul>
-                <li><a href="/">DailyTasks</a></li>
-            </ul>
-
-
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-            
-
-            <div class="auth-buttons">
-                <a href="/users/login" class="btn-link">Login</a>
-                <a href="/users/register" class="btn-link">Register</a>
-            </div>
-        </nav>
-    </div>
-</header>
+<header th:replace="fragments/commons::nav"></header>
 
 <main>
     <div class="card">
+
+        <div th:if="${successMessage}" class="alert alert-success">
+            <span th:text="${successMessage}"></span>
+        </div>
         <h2>LOGIN</h2>
 
-        <form>
+        <form
+            th:method="POST"
+            th:action="@{/users/login}"
+        >
             <label for="email">Email</label>
-            <input type="email" required>
+            <input
+                    type="email"
+                    name="username"
+                    required minlength="5" maxlength="20"
+            >
 
             <label for="password">Password</label>
-            <input type="password" required>
+            <input
+                    type="password"
+                    name="password"
+                    required minlength="5" maxlength="20"
+            >
 
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
@@ -54,9 +48,8 @@
     </div>
 </main>
 
-<footer>
-    © 2025 DailyTasks
-</footer>
+<footer th:replace="fragments/commons::footer"></footer>
+
 
 </body>
 </html>

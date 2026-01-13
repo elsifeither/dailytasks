@@ -10,28 +10,9 @@
 </head>
 
 <body>
-<header>
-    <div class="container">
-        <nav class="main-nav">
 
-            <ul>
-                <li><a href="/">DailyTasks</a></li>
-            </ul>
+<header th:replace="fragments/commons::nav"></header>
 
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact" class="active">Contact</a></li>
-
-            </ul>
-
-            <div class="auth-buttons">
-                <a href="/users/login" class="btn-link">Login</a>
-                <a href="/users/register" class="btn-link">Register</a>
-            </div>
-        </nav>
-    </div>
-</header>
 
 <main>
     <section class="contact-hero">
@@ -47,9 +28,7 @@
     </section>
 </main>
 
-<footer>
-    © 2025 DailyTasks
-</footer>
+<footer th:replace="fragments/commons::footer"></footer>
 
 </body>
 </html>

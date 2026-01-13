@@ -7,7 +7,6 @@ import com.example.dailytasks.model.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -43,15 +42,5 @@ public class UserEntityService {
         UserEntity mappedEntity = modelMapper.map(userRegisterDTO, UserEntity.class);
         mappedEntity.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
         return mappedEntity;
-    }
-
-    // Намиране на потребител по email
-    public Optional<UserEntity> findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
-
-    // Намиране на потребител по ID
-    public Optional<UserEntity> findById(Long id) {
-        return userRepository.findById(id);
     }
 }

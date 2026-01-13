@@ -12,29 +12,8 @@
 
 <body class="page-tasks">
 
-    <header>
-        <div class="container">
-            <nav class="main-nav">
+<header th:replace="fragments/commons::nav"></header>
 
-                <ul>
-                    <li><a href="/">DailyTasks</a></li>
-                </ul>
-
-
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-
-
-                <div class="auth-buttons">
-                    <a href="/users/login" class="btn-link">Login</a>
-                    <a href="/users/register" class="btn-link">Register</a>
-                </div>
-            </nav>
-        </div>
-    </header>
 
     <main>
         <div class="tasks-container">
@@ -85,9 +64,7 @@
         </div>
     </main>
 
-    <footer>
-        © 2025 DailyTasks
-    </footer>
+<footer th:replace="fragments/commons::footer"></footer>
 
 
 

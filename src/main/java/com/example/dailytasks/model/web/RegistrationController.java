@@ -31,8 +31,7 @@ public class RegistrationController {
 
 
     @GetMapping("/register")
-    public String register(Model model) {
-        model.addAttribute("userEntity", new UserEntity());
+    public String register() {
         return "registration";
     }
 
@@ -46,7 +45,7 @@ public class RegistrationController {
             redirectAttributes.addFlashAttribute("registerDTO", registerDTO);
             redirectAttributes.addFlashAttribute(
                     "org.springframework.validation.BindingResult.registerDTO", bindingResult);
-            redirectAttributes.addFlashAttribute("errorMessage", "Please fix the form errors!");
+            redirectAttributes.addFlashAttribute("errorMessage", "The password confirmation does not match!");
 
 
             return "redirect:/users/register";
@@ -58,7 +57,7 @@ public class RegistrationController {
             redirectAttributes.addFlashAttribute("errorMessage", "Email or username already exists!");
             return "redirect:/users/register";
         }
-        redirectAttributes.addFlashAttribute("successMessage", "Registration successful! Please log in.");
+        redirectAttributes.addFlashAttribute("successMessage", "Registration was successful! Please log in.");
         return "redirect:/users/login";
     }
 }
