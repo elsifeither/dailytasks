@@ -12,7 +12,6 @@ public class HomeController {
         return "index";
     }
 
-
     @GetMapping("/about")
     public String about() {
         return "about";
@@ -24,9 +23,5 @@ public class HomeController {
     }
 
 
-    @GetMapping("/task")
-    public String task() {
-        return "task";
-    }
 
 }

@@ -14,57 +14,101 @@
 <header th:replace="fragments/commons::nav"></header>
 
 
-    <main>
-        <div class="tasks-container">
+<main>
+    <div class="tasks-container">
 
-            <div class="tasks-toolbar">
-                <h2>Your Tasks</h2>
-                <button class="btn btn-add" id="addTaskBtn" >+ Add</button>
-            </div>
-
-            <div id="addTaskForm" class="task-card hidden">
-                <h3>Add New Task</h3>
-
-                <form class="task-form">
-                    <input type="text" placeholder="Title" required>
-                    <input type="text" placeholder="Description" required>
-                    <input type="date" required>
-
-                    <div class="form-buttons">
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-secondary" id="cancelAddTaskBtn">Cancel</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="task-card">
-                <div class="task-header">
-                    <h3>Finish Spring project</h3>
-                    <span class="task-date">2025-01-10</span>
-                </div>
-
-                <p class="task-desc">
-                    Complete entities, controllers and UI.
-                </p>
-
-                <div class="task-actions">
-                    <label>
-                        <input type="checkbox">
-                        Completed
-                    </label>
-
-                    <div class="task-buttons">
-                        <button class="btn btn-small">Edit</button>
-                        <button class="btn btn-danger btn-small">Delete</button>
-                    </div>
-                </div>
-            </div>
-
+        <div class="tasks-toolbar">
+            <h2>Your Tasks</h2>
+            <button class="btn btn-add" id="addTaskBtn">+ Add</button>
         </div>
-    </main>
+
+        <div id="addTaskForm" class="task-card hidden">
+
+            <div th:if="${errorMessage}" class="alert alert-danger ">
+                <span th:text="${errorMessage}"></span>
+            </div>
+
+            <div th:if="${successMessage}" class="alert alert-success">
+                <span th:text="${successMessage}"></span>
+            </div>
+
+            <h3>Add New Task</h3>
+
+            <form
+                    th:action="@{/task}"
+                    th:object="${taskDTO}"
+                    th:method="POST"
+                    class="task-form"
+            >
+                <input
+                        th:field="*{title}"
+                        type="text"
+                        placeholder="Title"
+                        required
+                >
+                <input
+                        th:field="*{description}"
+                        type="text"
+                        placeholder="Description"
+                        required
+                >
+                <input
+                        th:field="*{dueDate}"
+                        type="date"
+                        required
+                >
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" id="cancelAddTaskBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="task-card"
+             th:each="task : ${tasks}"
+        >
+
+            <div class="task-header">
+                <h3 th:text="${task.title}"></h3>
+                <span class="task-date"
+                      th:text="${task.dueDate}">
+                </span>
+            </div>
+
+            <p class="task-desc"
+               th:text="${task.description}">
+            </p>
+
+            <div class="task-actions">
+                <label>
+                    <input
+                            type="checkbox"
+                            th:checked="${task.completed}"
+                            disabled
+                    >
+                    Completed
+                </label>
+
+                <div class="task-buttons">
+                    <button class="btn btn-small">Edit</button>
+
+                    <form
+                            style="display:inline"
+                    >
+                        <button class="btn btn-danger btn-small">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
 
 <footer th:replace="fragments/commons::footer"></footer>
-
 
 
 <script src="/js/tasks.js"></script>

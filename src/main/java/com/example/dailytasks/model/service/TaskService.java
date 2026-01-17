@@ -1,39 +1,36 @@
 package com.example.dailytasks.model.service;
 
+import com.example.dailytasks.model.dto.TaskDTO;
 import com.example.dailytasks.model.entity.Task;
 import com.example.dailytasks.model.entity.UserEntity;
 import com.example.dailytasks.model.repository.TaskRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class TaskService {
 
+    private final ModelMapper modelMapper;
     private final TaskRepository taskRepository;
 
-    public TaskService(TaskRepository taskRepository) {
+    public TaskService(ModelMapper modelMapper, TaskRepository taskRepository) {
+        this.modelMapper = modelMapper;
         this.taskRepository = taskRepository;
     }
 
-    // Създаване или обновяване на задача
-    public Task saveTask(Task task) {
-        return taskRepository.save(task);
+    public void saveTask(TaskDTO taskDTO,UserEntity user) {
+        Task task = modelMapper.map(taskDTO, Task.class);
+        task.setUser(user);
+        taskRepository.save(task);
     }
 
-    // Връща всички задачи за потребител
-    public List<Task> getTasksByUser(UserEntity userEntity) {
-        return taskRepository.findByUser(userEntity);
+
+    public List<Task> getTasksForUser(UserEntity user) {
+        return taskRepository.findAllByUserEntity(user);
     }
 
-    // Намиране на задача по ID
-    public Optional<Task> getTaskById(Long id) {
-        return taskRepository.findById(id);
-    }
 
-    // Изтриване на задача
-    public void deleteTask(Task task) {
-        taskRepository.delete(task);
-    }
 }

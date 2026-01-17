@@ -1,5 +1,6 @@
 package com.example.dailytasks.model.service;
 
+import com.example.dailytasks.model.repository.TaskRepository;
 import org.modelmapper.ModelMapper;
 import com.example.dailytasks.model.dto.UserRegisterDTO;
 import com.example.dailytasks.model.entity.UserEntity;
@@ -36,7 +37,12 @@ public class UserEntityService {
         return true;
     }
 
-
+    public UserEntity findByUsername(String username) {
+        return userRepository
+                .findByEmail(username)
+                .orElseThrow(() ->
+                        new IllegalArgumentException("User not found"));
+    }
 
     private UserEntity map(UserRegisterDTO userRegisterDTO) {
         UserEntity mappedEntity = modelMapper.map(userRegisterDTO, UserEntity.class);
