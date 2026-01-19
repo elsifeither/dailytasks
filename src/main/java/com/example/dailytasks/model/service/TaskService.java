@@ -33,4 +33,11 @@ public class TaskService {
     }
 
 
+
+    public void deleteTask(Long taskId, UserEntity user) {
+        Task task = taskRepository.findByIdAndUserEntity(taskId, user)
+                .orElseThrow(() -> new IllegalArgumentException("Task not found or you are not the owner"));
+        taskRepository.delete(task);
+    }
+
 }

@@ -19,10 +19,6 @@
 
         <div class="tasks-toolbar">
             <h2>Your Tasks</h2>
-            <button class="btn btn-add" id="addTaskBtn">+ Add</button>
-        </div>
-
-        <div id="addTaskForm" class="task-card hidden">
 
             <div th:if="${errorMessage}" class="alert alert-danger ">
                 <span th:text="${errorMessage}"></span>
@@ -31,6 +27,14 @@
             <div th:if="${successMessage}" class="alert alert-success">
                 <span th:text="${successMessage}"></span>
             </div>
+
+            <button class="btn btn-add" id="addTaskBtn">+ Add</button>
+
+        </div>
+
+        <div id="addTaskForm" class="task-card hidden">
+
+
 
             <h3>Add New Task</h3>
 
@@ -86,7 +90,7 @@
                     <input
                             type="checkbox"
                             th:checked="${task.completed}"
-                            disabled
+
                     >
                     Completed
                 </label>
@@ -95,6 +99,8 @@
                     <button class="btn btn-small">Edit</button>
 
                     <form
+                            th:action="@{/task/delete/{id}(id=${task.id})}"
+                            th:method="POST"
                             style="display:inline"
                     >
                         <button class="btn btn-danger btn-small">
