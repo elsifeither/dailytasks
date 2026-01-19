@@ -16,13 +16,43 @@
 
 <main>
     <section class="contact-hero">
+
+        <div th:if="${successMessage}" class="alert alert-success">
+            <span th:text="${successMessage}"></span>
+        </div>
+
+        <div th:if="${errorMessage}" class="alert alert-danger">
+            <span th:text="${errorMessage}"></span>
+        </div>
+
         <h2>Get in Touch</h2>
         <p>Have questions or feedback? We'd love to hear from you!</p>
 
-        <form class="contact-form" action="#" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <form
+                th:action="@{/contact}"
+                th:object="${contactDTO}"
+                th:method="POST"
+                class="contact-form"
+        >
+            <input
+                    type="text"
+                    th:field="*{name}"
+                    placeholder="Your Name"
+                    required
+            >
+            <input
+                    type="email"
+                    th:field="*{email}"
+                    placeholder="Your Email"
+                    required
+            >
+            <textarea
+                    th:field="*{message}"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+            >
+            </textarea>
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
     </section>

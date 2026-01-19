@@ -27,17 +27,22 @@ public class TaskService {
         taskRepository.save(task);
     }
 
-
     public List<Task> getTasksForUser(UserEntity user) {
         return taskRepository.findAllByUserEntity(user);
     }
-
-
 
     public void deleteTask(Long taskId, UserEntity user) {
         Task task = taskRepository.findByIdAndUserEntity(taskId, user)
                 .orElseThrow(() -> new IllegalArgumentException("Task not found or you are not the owner"));
         taskRepository.delete(task);
     }
+
+
+
+
+
+
+
+
 
 }
