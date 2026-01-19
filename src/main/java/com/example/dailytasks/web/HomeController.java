@@ -1,4 +1,4 @@
-package com.example.dailytasks.model.web;
+package com.example.dailytasks.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

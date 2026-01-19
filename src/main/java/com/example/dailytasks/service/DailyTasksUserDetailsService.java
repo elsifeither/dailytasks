@@ -1,7 +1,7 @@
-package com.example.dailytasks.model.service;
+package com.example.dailytasks.service;
 
 import com.example.dailytasks.model.entity.UserEntity;
-import com.example.dailytasks.model.repository.UserRepository;
+import com.example.dailytasks.repository.UserRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

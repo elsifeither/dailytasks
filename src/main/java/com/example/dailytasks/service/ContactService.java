@@ -1,8 +1,8 @@
-package com.example.dailytasks.model.service;
+package com.example.dailytasks.service;
 
 import com.example.dailytasks.model.dto.ContactDTO;
 import com.example.dailytasks.model.entity.Contact;
-import com.example.dailytasks.model.repository.ContactRepository;
+import com.example.dailytasks.repository.ContactRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

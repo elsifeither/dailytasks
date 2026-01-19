@@ -1,4 +1,4 @@
-package com.example.dailytasks.model.repository;
+package com.example.dailytasks.repository;
 
 import com.example.dailytasks.model.entity.Contact;
 import org.springframework.data.jpa.repository.JpaRepository;

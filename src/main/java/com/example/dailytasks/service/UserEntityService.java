@@ -1,10 +1,9 @@
-package com.example.dailytasks.model.service;
+package com.example.dailytasks.service;
 
-import com.example.dailytasks.model.repository.TaskRepository;
 import org.modelmapper.ModelMapper;
 import com.example.dailytasks.model.dto.UserRegisterDTO;
 import com.example.dailytasks.model.entity.UserEntity;
-import com.example.dailytasks.model.repository.UserRepository;
+import com.example.dailytasks.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

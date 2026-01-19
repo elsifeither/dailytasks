@@ -1,11 +1,10 @@
-package com.example.dailytasks.model.web;
+package com.example.dailytasks.web;
 
 import com.example.dailytasks.model.dto.TaskDTO;
-import com.example.dailytasks.model.dto.UserRegisterDTO;
 import com.example.dailytasks.model.entity.Task;
 import com.example.dailytasks.model.entity.UserEntity;
-import com.example.dailytasks.model.service.TaskService;
-import com.example.dailytasks.model.service.UserEntityService;
+import com.example.dailytasks.service.TaskService;
+import com.example.dailytasks.service.UserEntityService;
 import jakarta.validation.Valid;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;

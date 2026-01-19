@@ -1,7 +1,7 @@
-package com.example.dailytasks.model.web;
+package com.example.dailytasks.web;
 
 import com.example.dailytasks.model.dto.ContactDTO;
-import com.example.dailytasks.model.service.ContactService;
+import com.example.dailytasks.service.ContactService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

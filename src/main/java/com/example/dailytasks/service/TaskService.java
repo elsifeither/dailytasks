@@ -1,9 +1,9 @@
-package com.example.dailytasks.model.service;
+package com.example.dailytasks.service;
 
 import com.example.dailytasks.model.dto.TaskDTO;
 import com.example.dailytasks.model.entity.Task;
 import com.example.dailytasks.model.entity.UserEntity;
-import com.example.dailytasks.model.repository.TaskRepository;
+import com.example.dailytasks.repository.TaskRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
